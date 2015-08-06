@@ -1,0 +1,47 @@
+.personContentRight{position:relative; min-height:400px;}
+/*留言内容*/
+.personContentRightCont{width:500px;}
+.personContentRightCont ul li{padding:10px;}
+.personContentRightCont ul li:hover p{box-shadow:0 0 8px rgba(144,191,95,0.9);}
+.personContentRightCont ul li h5{height:45px;font:600 14px/45px "微软雅黑"; color:#666;}
+.personContentRightCont ul li p{border:1px solid rgba(144,191,95,0.9); padding:20px 10px; font:14px/20px "微软雅黑"; text-indent:2em; position:relative; border-radius:5px; color:#666; box-shadow:0 0 8px  rgba(144,191,95,0.5); -webkit-box-shadow:0 0 8px rgba(144,191,95,0.5); -moz-box-shadow:0 0 8px rgba(144,191,95,0.5); -ms-box-shadow:0 0 8px rgba(144,191,95,0.5); -moz-transition:all .3s; -webkit-transition:all .3s; -ms-transition:all .3s;transition:all .3s;}
+.personContentRightCont ul li p:before{content:""; width:0; height:0; border-top:10px solid transparent; border-left:10px solid transparent; border-right:10px solid transparent; border-bottom:10px solid rgba(144,191,95,0.9); position:absolute; top:-20px; left:20px;}
+.personContentRightCont ul li p span.deleteOption{position:absolute; right:10px; bottom:0px; color:#f00; line-height:25px; text-align:left; letter-spacing:2px; cursor:pointer;}
+/*page start*/
+#page{width:500px; height:20px; text-align:center; line-height:20px; text-align:right; margin-top:30px;}
+#page a{ height:20px; font:14px "微软雅黑"; margin-left:5px; margin-right:5px; padding:0 2px; color:#2b2b2b;  transition:all .6s; -webkit-transition: all .6s; -moz-transition: all .6s; -ms-transition: all .6s; display:inline-block; line-height:20px;}
+#page a:hover{color:#43993F; border-bottom:1px solid #43993F;}
+#page a.hoverStyle{background:#43993F; color:#fff;}
+/*留言板*/
+.askBox{width:280px; height:280px; border:3px solid rgba(144,191,95,0.6); position:absolute; top:60px; right:10px; border-radius:5px; box-shadow:0 0 15px rgba(144,191,95,0.9); padding:10px;}
+.askBox h4{height:45px; font:600 20px/45px "微软雅黑"; letter-spacing:2px; color:#60A411; text-shadow:0 0 4px rgba(144,191,95,0.8);}
+.askBox h4 span{font:16px "icon"; color:#60A411; margin-left:20px; margin-right:10px;}
+.askBox textarea{width:260px; height:120px; border:2px solid rgba(144,191,95,0.6); padding:5px; resize:none; background:rgba(0,0,0,0.05); border-radius:5px; outline:none; font:12px/20px "微软雅黑"; color:#666; letter-spacing:1px;}
+.askBox textarea:hover{box-shadow:0 0 10px rgba(0,0,0,0.1);}
+.askBox .notMore{height:30px; font:12px/30px "微软雅黑"; text-align:right; letter-spacing:1px; color:#60A411;}
+.askBox .notMore span{font-style:italic; font-weight:600; font-size:18px; margin-left:5px; margin-right:5px;}
+#btnSubmit{width:100px; height:30px; border:1px solid #60A411; margin-top:20px; margin-left:90px; border-radius:15px; background:rgba(144,191,95,1); font:400 14px "微软雅黑"; color:#fff; cursor:pointer;}
+#btnSubmit:hover{opacity:0.9;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+.personContentRight p{height:45px; font:14px/45px "微软雅黑"; padding-left:50px; color:#60A411;}
+.personContentRight tr{border-bottom:1px solid #ccc;}
+.personContentRight th{width:200px; height:35px; text-align:center; line-height:20px; font:400 14px "微软雅黑";}
+.personContentRight td{text-align:center; font:12px "微软雅黑"; padding:10px 0; }
+.personContentRight td img{display:inline-block; -webkit-transition:all .3s; -moz-transition:all .3s; -ms-transition:all .3s; transition:all .3s;}
+.personContentRight td img:hover{box-shadow:0 0 5px rgba(0,0,0,0.3);}
+.personContentRight td a{font:12px "微软雅黑"; color:#666; }
+.personContentRight td a:hover{color:#f00; text-decoration:underline;}
+.personContentRight td span{font:12px "微软雅黑"; color:#666;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

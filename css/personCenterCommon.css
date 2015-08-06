@@ -1,0 +1,34 @@
+/*个人中心*/
+#personCenter{width:1050px; margin:0 auto 50px;}
+#personCenter h2{height:60px; font:700 20px/60px "微软雅黑"; letter-spacing:1px; padding:0 10px; color:#333;}
+.personContent{width:990px; border:1px solid #ccc; padding:30px;}
+.personContent .personContentLeft{width:150px;}
+.personContentLeft ul li{width:100%; height:45px; position:relative;}
+.personContentLeft ul li a{font:12px/45px "微软雅黑"; color:#666; cursor:pointer;}
+.personContentLeft ul li a:hover{color:#f00; text-decoration:underline;}
+.personContentRight{width:840px; background:#fff; padding-bottom:50px;}
+.personContentRight h3{width:800px; height:60px; font:600 16px/60px "微软雅黑"; color:#60A411; padding-left:60px; position:relative; letter-spacing:1px; }
+.personContentRight h3 span.spanIcon{position:absolute; top:-3px; left:20px; font-family:'icon'; font-size:30px; color:#60A411;}
+.personContentLeft ul li.nowTitle a{color:#60A411;}
+.personContentLeft ul li.nowTitle:before{content:'*'; display:block; width:5px; height:5px; position:absolute; top:14px; left:-14px; color:#60A411; font-size:16px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

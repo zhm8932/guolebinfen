@@ -1,0 +1,47 @@
+body{width:100%; background-image:-webkit-linear-gradient(to bottom right, orange, green); background-image:-moz-linear-gradient(to bottom right, #EAD17C, #ADED89); background-image:-ms-linear-gradient(to bottom right, #EAD17C, #ADED89); background-image:linear-gradient(to bottom right, #EAD17C, #ADED89); }
+#wrap{width:980px; height:900px; margin:0 auto;}
+
+/*head*/
+#wrap .head{width:980px; height:50px; padding:50px 0; background:;}
+#wrap .head a{display:inline-block; height:50px; margin-right:25px; }
+#wrap .head a img{display:block; height:50px;}
+
+/*main left*/
+#wrap .main{width:850px; height:600px; padding:40px 50px 0 80px; margin:0 auto; background:#fff;}
+.mainLeft{width:500px;}
+.mainLeft h2{height:50px; font:bold 20px/50px "微软雅黑"; letter-spacing:0.1em; color:#2b2b2b;}
+.formInfo>div{height:60px; padding-top:10px; position:relative;}
+.formInfo>div label{display:inline-block; width:100px; height:45px; font:14px/45px "微软雅黑"; letter-spacing:0.1em; text-align:right; color:#999;}
+.formInfo>div label b{font-size:14px; margin-right:5px; position:relative; top:3px; color:#F00;}
+.formInfo>div input{width:260px; height:30px; padding:2px 5px; font-size:14px; font-family:"微软雅黑"; color:#2b2b2b; border:1px solid #ccc; outline:none;}
+.successIcon{position:absolute; top:26px; left:348px; height:16px; width:16px; background:url(../image/icon/sucess.png); display:none;}
+.formInfo>div div.additionalInfo{width:200px; height:35px; border:1px solid #339933; position:absolute; left:390px; top:14px; line-height:35px; background:#F0FAEA; display:none;} 
+.formInfo>div div.additionalInfo:before{content:""; width:0; height:0; border-top:10px solid transparent; border-right:10px solid #339933; border-bottom:10px solid transparent; border-left:10px solid transparent; position:absolute; top:8px; left:-20px;}
+.loading{position:absolute;  left:380px; top:19px; width:50px; height:30px; background:url(../image/icon/loading.gif); display:none;}
+.formInfo>div div.beforeRed:before{ border-right:10px solid #f00;}
+.formInfo>div div.additionalInfo p{display:inline-block; width:190px; height:29px; padding:3px 0 3px 10px; line-height:15px; font:12px "微软雅黑";}
+#autoEmail{position:absolute; top:51px; left:100px; z-index:100; display:none;}
+#autoEmail li{width:270px; height:30px; font:14px/30px "微软雅黑"; text-align:left; letter-spacing:1px; border:1px solid #7ABD54; margin-top:-1px; background:#fff; text-indent:5px; cursor:pointer;}
+#autoEmail li:hover{background: #7ABD54;}
+#verification_code{width:270px; height:16px; margin-left:100px; color:#f00; font:12px/16px "微软雅黑"; letter-spacing:0.1em; display:none;}
+
+
+
+.formInfo>div:nth-of-type(2)>p{width:200px; height:20px; font:12px/20px "微软雅黑"; margin-left:100px; display:none;}
+.formInfo>div:nth-of-type(2)>p span{color:#999; vertical-align:middle;}
+.formInfo>div:nth-of-type(2)>p b{display:inline-block;width:105px; height:13px; background:url(../image/icon/pwdstrength.gif) 0 0; vertical-align:middle;}
+.formInfo>div:nth-of-type(6) input{width:120px;}
+.formInfo>div:nth-of-type(6) .successIcon{left:208px;}
+#createCode{display:inline-block; width:130px; height:35px; border:1px solid #ccc;text-align: center; line-height:37px; }
+.formInfo>div:nth-of-type(7){height:40px; line-height:40px;}
+.formInfo>div:nth-of-type(7) input{height:13px; width:13px; margin-left:100px; margin-right:5px; vertical-align:-2px;}
+.formInfo>div:nth-of-type(7) strong{font:normal 12px "微软雅黑";}
+.formInfo>div:nth-of-type(7) a{color:#005AA0; font:12px "微软雅黑";}
+.formInfo>div:nth-of-type(8){height:40px; line-height:40px;}
+.formInfo>div:nth-of-type(8) input{height:36px; width:270px; margin-left:100px; border-radius:5px; font:14px "微软雅黑"; letter-spacing:0.1em; /* background-image:-webkit-linear-gradient(to bottom, #648F00, green); background-image:-moz-linear-gradient(to bottom, #648F00, green); background-image:-ms-linear-gradient(to bottom, #648F00, green); background-image:linear-gradient(to bottom, #648F00, green); */ color:#2b2b2b; cursor:pointer;  cursor:not-allowed;}
+.formInfo>div:nth-of-type(8) input:hover{opacity:0.9;}
+
+/*main right*/
+.mainRight{width:220px; height:100px;}
+.mainRight a{display:inline-block; width:140px; height:45px; color:#218500; background:#F0FAEA; font:18px/45px "微软雅黑"; text-align:center; border-radius:5px;}
+.mainRight a:hover{background:#D3F0C4; }

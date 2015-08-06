@@ -1,0 +1,100 @@
+body{background:#fff;}
+/*settlement start*/
+#settlement{width:1050px; margin:0 auto; background:#fff; margin-top:10px; margin-bottom:50px;}
+.settlementTop{width:1050px; height:100px;}
+.settlementTitle{width:300px; font:25px/100px "微软雅黑"; letter-spacing:3px; text-align:left;}
+.settlementTop img{margin-left:50px; margin-top:10px;}
+.settlementStep{width:500px; height:100px;}
+
+.settlementStep dl{width:160px; height:36px; border-top:5px solid #caecb6; position:relative; margin-top:40px; padding-top:15px; text-align:center;}
+.settlementStep dt{width:23px; height:23px; position:absolute; top:-15px; left:50%; margin-left:-11px; background:url(../image/icon/step.png) no-repeat -46px 0; text-align:center; font:700 12px/23px "微软雅黑"; color:#fff;}
+.settlementStep dl.dlNow{border-top-color:#7abd54;}
+dl.dlNow dt{background:url(../image/icon/step.png) no-repeat -23px 0;}
+.settlementStep dd{font:12px "微软雅黑"; color:#ADF289;}
+dl.dlNow dd{color:#7abd54;}
+/*settlement center*/
+div.checkoutTitle{width:1050px; height:42px; font:16px/42px "微软雅黑"; color:#666;}
+.settlementContent{width:1008px; border:1px solid #ccc; border-bottom:1px solid #ccc; padding:0 20px 10px; }
+.stepTitle{height:40px; border-bottom:1px solid #ccc;}
+.stepTitle h3, .paymentMethod h3, .shippingList h3{width:200px; height:40px; font:700 16px/40px "微软雅黑"; letter-spacing:3px;}
+.areaR{width:100px; height:40px; line-height:40px; text-align:center;}
+.areaR a{color:#005ea7; font:12px "微软雅黑";}
+.areaR a:hover{color:#f00;}
+
+.stepCont{ line-height:30px; padding-top:20px; padding-left:20px; border-bottom:1px solid #ccc;}
+.stepCont li{padding:5px 0; display:none;}
+.consignee{width:92px; height:20px; padding:4px 23px; text-align:center; line-height:20px; letter-spacing:1px; color:#666; position:relative; border:1px solid #ccc; cursor:pointer; position:relative; z-index:100;}
+.consignee:hover{border:2px solid #e4393c;height:18px; width:90px; line-height:18px;}
+.consigneeOther{ border:2px solid #e4393c;height:18px; width:90px; line-height:18px;}
+.consignee b{position:absolute; bottom:0; right:0; width:12px; height:12px;}
+.consignee span{font:12px "微软雅黑";}
+.consigneeOther b{background:url(../image/icon/selected-icon.png);}
+.detailAdress{width:800px; padding-left:20px; position:relative;}
+li:hover .detailAdress{background:#FFF3F3;}
+.detailAdress span{font:12px "微软雅黑"; color:#666;}
+.detailAdress a{float:right; margin-right:10px; color:#005EA7; font:12px "微软雅黑"; margin-top:7px;}
+.detailAdress a:hover{color:#f00;}
+/*显示更多地址或收起地址*/
+.addrSwitch{height:18px; padding:5px 0 20px; line-height:18px; margin-top:10px; display:none;}
+.addrSwitch div{width:200px;}
+.addrSwitch span{font:14px "微软雅黑"; color:#666; letter-spacing:1px; cursor:pointer; padding-right:5px;}
+.addrSwitch b{width:9px; height:10px; display:inline-block; vertical-align:-1px; background:url(../image/icon/addr-i.png) no-repeat 0 0; cursor:pointer;}
+.paymentMethod{border-bottom:1px solid #ccc; padding-bottom:15px;}
+.paymentMethod ul li{width:108px; height:28px; border:1px solid #ccc; text-align:center; line-height:30px; margin-left:20px; position:relative; font:12px/28px "微软雅黑"; color:#666; cursor:pointer;}
+
+.paymentMethod ul li span{display:none; width:13px; height:13px; background:url(../image/icon/qmark01.png); position:absolute; top:8px; right:12px; }
+.paymentMethod ul li b{position:absolute; bottom:0; right:0; width:12px; height:12px;}
+.paymentMethod ul li.otherLi{border:2px solid #e4393c; height:27px; width:106px; line-height:27px;}
+.paymentMethod ul li.otherLi b{background:url(../image/icon/selected-icon.png);}
+.paymentMethod ul li:hover{border:2px solid #e4393c; height:27px; width:106px; line-height:27px;}
+
+/*支付提示信息*/
+#tipTitle{width:333px; height:18px; padding:10px; position:absolute; left:-20px; top:-5px; color:#666; font:12px/18px "微软雅黑"; border:1px solid #edd28b; background:#fffdee;margin-top:40px; box-shadow:0 0 5px rgba(0,0,0,0.3);}
+#tipTitle span{width:11px; height:6px; background:url(../image/icon/tips.gif);  position:absolute; top:-6px; left:20px; display:inline-block;}
+
+
+/*送货清单*/
+.shippingList table{border-collapse:collapse; }
+.shippingList table tr{border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+.shippingList table tr td{width:201px; text-align:center;}
+.shippingList table tr td span{font:12px "微软雅黑"; color:#666;}
+.formDescription a{font:12px "微软雅黑"; color:#666;}
+.formDescription a:hover{color:#f00; text-decoration:underline;}
+.shippingList td.formPrice span{font-size:20px; color:#f00;}
+
+/*总价钱*/
+.totalPayable{height:60px; font:14px/60px "微软雅黑"; text-align:right;}
+.totalPayable span{font-size:20px; }
+.totalPayable strong{font-size:20px; color:#f00; margin-right: 20px; margin-left:10px;}
+.totalPayable a{width:135px; height:36px; background:url(../image/icon/btn-submit.jpg) no-repeat 0 0; font:18px "微软雅黑"; color:#fff; display:inline-block; vertical-align:8px;}
+.totalPayable a:hover{background-position:0 -36px;}
+/* 新增地址 */
+#addAddr{width:600px; height:300px; border:1px solid #ccc; border:4px solid rgba(0,0,0,0.3); border-radius:3px; position:fixed; top:180px; left:380px; background:#fff; display:none; z-index:100000;}
+.addAddrTitle{position:relative; background:#f3f3f3;}
+#addAddr h3{height:30px; font:16px/30px "微软雅黑"; padding:0 10px;}
+.addAddrTitle img{position:absolute; top:8px; right:10px; cursor:pointer;}
+#addAddr li{height:50px; font:12px/50px "微软雅黑"; padding-left:30px;}
+#addAddr li span{font:12px "微软雅黑"; color:#666;}
+#addAddr li span span{color:#f00; display:inline-block; vertical-align:-2px; margin-right:5px;}
+#addAddr li input{height:20px; width:250px; padding:2px 5px; border:1px solid #ccc; outline:none;}
+#addAddr li p{display:none; margin-left:10px; height:26px; border:2px solid #f00; line-height:26px; padding:0 10px; color:#f00;}
+#addAddr li input[type="button"]{width:110px; height:25px; border:1px solid #f3f3f3; background:#f3f3f3; font:12px "微软雅黑"; color:#666; cursor:pointer; margin-left:70px;}
+#addAddr li select{outline:none;}
+#addAddr li input[type="button"]:hover{background:#ccc;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

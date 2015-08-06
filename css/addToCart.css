@@ -1,0 +1,39 @@
+#wrapCart{width:950px; height:65px; padding:31px 20px 16px 100px; margin:0 auto; }
+#innerWrapCart{height:65px; background:url(../image/icon/bigSuccess.png) no-repeat 0 -90px; padding-left:56px; font:12px/65px "微软雅黑";}
+#innerWrapCart h3{font:24px/65px "微软雅黑"; color:#7ABD54;}
+span.cartGo a{width:90px; height:18px; padding:9px 30px; font:bold 15px "微软雅黑"; color:#fff; background:#F38036; margin-left:80px; margin-right:30px; border-radius:5px;}
+span.cartGo a:hover{opacity:0.9; filter:alpha(opacity=90);}
+span.continueShopping{letter-spacing:1px; color:#666;}
+span.continueShopping a{color:#005ea7; margin-left:5px; }
+span.continueShopping a:hover{color:#f00; text-decoration:underline;} 
+
+/*热门推荐*/
+#recommendations{width:1050px; margin:0 auto; border:1px solid #ccc;}
+#recommendations h3{width:1030px; height:45px; font:bold 15px/45px "微软雅黑"; color:#999; background:#eee; padding-left:20px; letter-spacing:1px;}
+
+.recommendationsCont{background:#fff; padding:10px 15px;}
+.recommendationsCont dl{width:326px; height:110px; padding:10px 7px;}
+.recommendationsCont dl dt{padding:5px 0 5px;}
+.recommendationsCont dl dt img{display:inline-block; width:100px; height:100px;}
+dd.pInfo{padding:5px 5px 5px 20px; font:12px "微软雅黑";}
+dd.pInfo div{margin-bottom:6px; height:18px; color:#666;letter-spacing:1px;}
+.pName a{color:#666;}
+.pName a:hover{color:#f00; text-decoration:underline;}
+.pPrice span, .pPrice strong{color:#E4393C;}
+.pBtn a{display:inline-block; width:89px; height:21px; border:1px solid #ccc; background:#eee; font:12px/21px "微软雅黑"; color:#333; text-align:center; border-radius:5px;}
+.pComm span{color:#005aa0; }
+.pBtn a:hover{opacity:0.9; filter:alpha(opacity=90);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

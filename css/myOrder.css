@@ -1,0 +1,26 @@
+.personContentRight table th{width:140px; height:45px; text-align:center; font:400 14px "微软雅黑"; color:#333; letter-spacing:1px; background:#F5F5F5;}
+.personContentRight table th select{outline:none;}
+.personContentRight table tr td{text-align:center; height:80px; font:12px "微软雅黑"; letter-spacing:1px; padding:5px 0;}
+.personContentRight table tr td img{display:inline-block; width:80px; height:80px; -moz-transition:all .3s; -webkit-transition:all .3s; -o-transition:all .3s; -ms-transition:all .3s; transition:all .3s;}
+.personContentRight table tr td img:hover{ box-shadow:0 0 5px rgba(0,0,0,0.3);}
+.personContentRight table tr{border-bottom:1px solid #ccc;}
+.personContentRight table tr a{color:#60A411;}
+.personContentRight table tr a:hover{color:#f00; text-decoration:underline;}
+
+/*page start*/
+#page{width:840px; height:40px; text-align:center; line-height:40px; margin:45px auto 0; text-align:right;}
+#page a{ height:30px; font:14px "微软雅黑"; margin-left:5px; margin-right:5px; padding:0 12px; color:#2b2b2b;  transition:all .6s; -webkit-transition: all .6s; -moz-transition: all .6s; -ms-transition: all .6s; display:inline-block; line-height:30px;}
+#page a:hover{color:#43993F; border-bottom:1px solid #43993F;}
+#page a.hoverStyle{background:#43993F; color:#fff;}
+
+
+
+
+
+
+
+
+
+
+
+

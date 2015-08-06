@@ -1,0 +1,9 @@
+.personContentRight ul li{height:60px; font:12px/60px "微软雅黑"; color:#666; margin-left:50px; letter-spacing:1px;}
+.personContentRight ul li input{width:250px; height:25px; border:1px solid #ccc; border-radius:5px;  padding:2px 5px; outline:none;}
+.personContentRight ul li input[type="button"]{width:150px; height:35px; border:1px solid #60A411; color:#fff; font:14px "微软雅黑"; letter-spacing:1px; background:#60A411; margin-left:60px; cursor:pointer;}
+.personContentRight ul li input[type="button"]:hover{opacity:0.9;}
+.personContentRight ul li p{width:250px; height:20px; font:12px/20px "微软雅黑"; margin-top:-10px; text-align:left; margin-left:70px;}
+.personContentRight ul li p b{display:inline-block;width:105px; height:13px; background:url(../image/icon/pwdstrength.gif) 0 0; vertical-align:middle;}
+.personContentRight ul li span{margin-left:20px; font:12px "微软雅黑"; letter-spacing:1px;}
+
+

@@ -1,0 +1,24 @@
+.addAddress a{width:90px; height:28px; border:1px solid #BFD6AF; background:#f5fbef; display:inline-block; font:600 14px/28px "微软雅黑"; color:#333; text-align:center; margin-left:30px; margin-right:30px; padding:0 14px; }
+.addAddress span{color:#666; font:12px "微软雅黑";}
+.addAddress span.addAddressNumber{color:#60A411; font-size:20px; margin:0 10px;}
+
+.address{width:820px; height:190px;border:1px solid #ccc; margin:20px 10px; position:relative;}
+.address ul li{height:45px; font:12px/45px "微软雅黑"; padding-left:50px; color:#666; letter-spacing:1px;}
+.address img{width:15px; height:15px; position:absolute; top:10px; right:10px; cursor:pointer;}
+.addressTools{width:150px; height:35px; position:absolute; right:10px; bottom:10px; font:12px/35px "微软雅黑"; text-align:center;}
+.addressTools a{color:#005EA7; margin-right:20px;}
+.addressTools a:hover{color:#f00; text-decoration:#f00;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
