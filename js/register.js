@@ -13,7 +13,8 @@ require(['jquery'], function($) {
 		allsFlagVerificationCode = false;
 	//用户名检验
 	var loadingFlag_1 = true;
-	$('#user').on('focus', function(){
+	var $user = $('#user');
+	$user.on('focus', function(){
 		if(loadingFlag_1){
     		$(this).css({
     			borderColor:"#7ABD54"
@@ -26,7 +27,7 @@ require(['jquery'], function($) {
     		$(this).next('span.successIcon').hide();    			
 		}
 	});
-	$('#user').on('blur', function(){
+	$user.on('blur', function(){
 		var value = $(this).val();
 		var pattern = /^[a-zA-Z0-9\u4E00-\u9FA5_-]{4,20}$/;
 		var numPattern = /^[0-9\s]{2,8}$/;
@@ -65,14 +66,14 @@ require(['jquery'], function($) {
 			}).removeClass('beforeRed').hide().find('p').html('4-20位字符，支持汉字、字母、数字及"-"、"_"组合');
 			//$(_this).next('span.successIcon').show();
 			//用户名正确后ajax提交检验是否可用
-				$('#user').nextAll('.loading').css('display','block');
+				$user.nextAll('.loading').css('display','block');
 /*      			$.ajax({
 				type:'GET',
 				url:'#',
 				data:'{"username":"'+value+'"}',
 				dataType:'json',
 				success:function(data){
-					$('#user').nextAll('.loading').css('display','none');
+					$user.nextAll('.loading').css('display','none');
 					
 				},
 				error:function(){
@@ -89,7 +90,7 @@ require(['jquery'], function($) {
     				color:'#2b2b2b'
     			}).removeClass('beforeRed').hide().find('p').html('请输入正确邮箱');
     			$(_this).nextAll('span.successIcon').show();
-    			$('#user').nextAll('.loading').css('display','none');
+    			$user.nextAll('.loading').css('display','none');
     			allsFlagUser = true;
     			checkIsSubmit();
 			}, 2000);
@@ -97,7 +98,8 @@ require(['jquery'], function($) {
 	});
 	
 	//密码验证
-	$('#pass').on('focus', function(){
+	var $pass = $('#pass');
+	$pass.on('focus', function(){
 		$(this).css({
 			borderColor:"#7ABD54"
 		});
@@ -109,7 +111,7 @@ require(['jquery'], function($) {
 		$(this).next('span.successIcon').hide();
 	});
 	var passValue='', secondPass='';
-	$('#pass').keyup(function(){
+	$pass.keyup(function(){
 		passValue = $(this).val();
 		if(passValue.length >=6){
 			//验证密码强度
@@ -133,28 +135,29 @@ require(['jquery'], function($) {
 		}
 
 	});
-	$('#pass').on('blur', function(){
+	var $confirmPass =  $('#confirmPass');
+	$pass.on('blur', function(){
 		var value = $(this).val();
 		var pattern = /^[\S]{6,20}$/;
 		//当第二次再次修改第一次输入的密码的时候
 		if(secondPass.length > 0){
 			if(secondPass != passValue){
-				$('#confirmPass').css('borderColor','#f00');
-    			$('#confirmPass').nextAll('.additionalInfo').css({
+				$confirmPass.css('borderColor','#f00');
+    			$confirmPass.nextAll('.additionalInfo').css({
     				borderColor:'#f00',
     				backgroundColor:'#FFEBEB',
     				color:'#f00'
     			}).addClass('beforeRed').show().find('p').html('两次输入密码不一致');
-    			$('#confirmPass').next('span.successIcon').hide();
+    			$confirmPass.next('span.successIcon').hide();
     			allsFlagConfirmPass = false;
 			}else{
-				$('#confirmPass').css('borderColor','#ccc');
-    			$('#confirmPass').nextAll('.additionalInfo').css({
+				$confirmPass.css('borderColor','#ccc');
+    			$confirmPass.nextAll('.additionalInfo').css({
     				borderColor:'#7ABD54',
     				backgroundColor:'#F0FAEA',
     				color:'#2b2b2b'
     			}).removeClass('beforeRed').hide().find('p').html('请再次输入密码');
-    			$('#confirmPass').next('span.successIcon').show();
+    			$confirmPass.next('span.successIcon').show();
     			allsFlagConfirmPass = true;
     			checkIsSubmit();
 			}
@@ -189,7 +192,7 @@ require(['jquery'], function($) {
 		}
 	});
 	//二次密码验证是否相等
-	$('#confirmPass').on('focus', function(){
+	$confirmPass.on('focus', function(){
 		$(this).css({
 			borderColor:"#7ABD54"
 		});
@@ -200,7 +203,7 @@ require(['jquery'], function($) {
 			}).removeClass('beforeRed').show().find('p').html('请再次输入密码');
 		$(this).next('span.successIcon').hide();
 	});
-	$('#confirmPass').blur(function(){
+	$confirmPass.blur(function(){
 		secondPass = $(this).val();
 			if(secondPass.length > 0 && passValue.length > 0 && secondPass == passValue){
 				$(this).css('borderColor','#ccc');
@@ -225,7 +228,8 @@ require(['jquery'], function($) {
 	});
 
 	//验证手机号码是否正确
-	$('#phone').on('focus', function(){
+	var $phone = $('#phone');
+	$phone.on('focus', function(){
 		$(this).css({
 			borderColor:"#7ABD54"
 		});
@@ -236,7 +240,7 @@ require(['jquery'], function($) {
 			}).removeClass('beforeRed').show().find('p').html('请输入正确手机号');
 		$(this).next('span.successIcon').hide();
 	});
-	$('#phone').blur(function(){
+	$phone.blur(function(){
 		var phoneVal = $(this).val();
 		var pattern =  /(^13\d{9}$)|(^14)[5,7]\d{8}$|(^15[0,1,2,3,5,6,7,8,9]\d{8}$)|(^17)[6,7,8]\d{8}$|(^18\d{9}$)/g;
 		if(pattern.test(phoneVal)){
@@ -260,7 +264,8 @@ require(['jquery'], function($) {
 		}
 	});
 	//邮箱验证
-	$('#mail').on('focus', function(){
+	var $email = $('#mail');
+	$email.on('focus', function(){
 		$(this).css({
 			borderColor:"#7ABD54"
 		});
@@ -272,7 +277,7 @@ require(['jquery'], function($) {
 		$(this).next('span.successIcon').hide();
 	});
 
-	$('#mail').blur(function(){
+	$email.blur(function(){
 
 		var mailVal = $(this).val();
 		var pattern =   /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
@@ -330,7 +335,7 @@ require(['jquery'], function($) {
 		checkIsSubmit();
 
 	});
-	$('#mail').keyup(function(){
+	$email.keyup(function(){
 		var value = $.trim($(this).val());
 		if(value.length < 0){
             $("#autoEmail").hide();
@@ -363,7 +368,9 @@ require(['jquery'], function($) {
 	});
 	//验证码验证
 	var loadingFlag_2 = true;
-	$('#verificationCode').on('focus', function(){
+	var $verificationCode = $('#verificationCode');
+	var $verification_code = $('#verification_code');
+	$verificationCode.on('focus', function(){
 		if(loadingFlag_2){
     		$(this).css({
     			borderColor:"#7ABD54"
@@ -374,16 +381,16 @@ require(['jquery'], function($) {
     				color:'#2b2b2b'
     			}).removeClass('beforeRed').show().find('p').html('请输入验证码');
     		$(this).nextAll('span.successIcon').hide();  
-    		$('#verification_code').css('display','none');		
+    		$verification_code.css('display','none');		
 		}
 	});
-	$('#verificationCode').blur(function(){
+	$verificationCode.blur(function(){
 		var verificationCode = $(this).val();
 		if(/^[\u4E00-\u9FA5]{4,4}$/.test(verificationCode)){
 
 			var _this = this;
 			loadingFlag_2 = false;
-			$('#verificationCode').nextAll('.loading').css('display','block');
+			$verificationCode.nextAll('.loading').css('display','block');
 			$(_this).css('borderColor','#ccc');
 			$(_this).nextAll('.additionalInfo').css({
 				borderColor:'#7ABD54',
@@ -405,7 +412,7 @@ require(['jquery'], function($) {
 				setTimeout(function(){
 					var data = true;
 					if(data){
-						$('#verification_code').css('display','none');
+						$verification_code.css('display','none');
 						$(_this).css('borderColor','#ccc');
 		    			$(_this).nextAll('.additionalInfo').css({
 		    				borderColor:'#7ABD54',
@@ -413,9 +420,9 @@ require(['jquery'], function($) {
 		    				color:'#2b2b2b'
 		    			}).removeClass('beforeRed').hide().find('p').html('请输入正确邮箱');
 		    			$(_this).nextAll('span.successIcon').show();
-		    			$('#verificationCode').nextAll('.loading').css('display','none');
+		    			$verificationCode.nextAll('.loading').css('display','none');
 					}else{
-						$('#verification_code').css('display','block');
+						$verification_code.css('display','block');
 					}
 					loadingFlag_2 = true;
 					allsFlagVerificationCode = true;
@@ -426,7 +433,7 @@ require(['jquery'], function($) {
 
 		}else{
 			if(loadingFlag_2){
-				$('#verification_code').css('display','none');
+				$verification_code.css('display','none');
 				$(this).nextAll('span.successIcon').hide();
 				$(this).css('borderColor','#f00');
     			$(this).nextAll('.additionalInfo').css({
@@ -444,27 +451,20 @@ require(['jquery'], function($) {
 		checkIsSubmit();
 	});
 	//点击提交按钮
-	$('#btn').on('click', function(){
-		console.log("allsFlagUser : "+ allsFlagUser);
-		console.log("allsFlagUser : "+ allsFlagUser);
-		console.log("allsFlagConfirmPass : "+ allsFlagConfirmPass);
-		console.log("allsFlagMail : "+ allsFlagMail);
-		console.log("allsFlagPhone : "+ allsFlagPhone);
-		console.log("allsFlagVerificationCode : "+ allsFlagVerificationCode);
-	});
+	var $btn = $('#btn');
 
 	//提交按钮检查是否可提交
 	function checkIsSubmit(){
 		var isChecked = $('#check').prop('checked');
 		if(allsFlagUser && allsFlagUser && allsFlagConfirmPass && allsFlagMail && allsFlagPhone && allsFlagVerificationCode && isChecked){
-			$('#btn').prop('disabled', false).css({
+			$btn.prop('disabled', false).css({
 				 backgroundImage:'-webkit-linear-gradient(to bottom, #648F00, green)',
 				 backgroundImage:'-moz-linear-gradient(to bottom, #648F00, green)',
 				 backgroundImage:'-ms-linear-gradient(to bottom, #648F00, green)', 
 				 backgroundImage:'linear-gradient(to bottom, #648F00, green)',
 				 cursor:'pointer'
 			});
-			$('#btn').on('click', function(){
+			$btn.on('click', function(){
 				$('.mainLeft form').submit();	
 			});
 			

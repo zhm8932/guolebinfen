@@ -9,69 +9,73 @@ require(['jquery', 'nav', 'common', 'jqueryExtend'], function($, nav) {
 	//照片查看器
 
 	$('.bigImg').mouseover(function(){
-		$('#zhezhao').show();
-		$('#outsideBigImg').show();
+		var $zhezhao = $('#zhezhao');
+		var $outsideBigImg = $('#outsideBigImg');
+		$zhezhao.show();
+		$outsideBigImg.show();
 		var _this = this;
 		var l = $(_this).offset().left;
 		var t = $(_this).offset().top;
 
 		//求出小图与大图的宽高比率
-		var ratioX = $('#outsideBigImg img').width()/$(this).width();
-		var ratioY = $('#outsideBigImg img').height()/ $(this).height();
+		var ratioX = $outsideBigImg.find('img').width()/$(this).width();
+		var ratioY = $outsideBigImg.find('img').height()/ $(this).height();
 		$(document).mousemove(function(ev){
-			if($(ev.target).attr('class') == $('#outsideBigImg img').attr('class')){
-				$('#outsideBigImg').hide();
+			if($(ev.target).attr('class') == $outsideBigImg.find('img').attr('class')){
+				$outsideBigImg.hide();
 			}
-			var left = ev.pageX - l - $('#zhezhao').width()/2;
-			var top = ev.pageY - t - $('#zhezhao').height()/2;
+			var left = ev.pageX - l - $zhezhao.width()/2;
+			var top = ev.pageY - t - $zhezhao.height()/2;
 			if(left<0){
 				left = 0;
-			}else if(left >= ($(_this).width() - $('#zhezhao').width())){
-				left = $(_this).width() - $('#zhezhao').width();
+			}else if(left >= ($(_this).width() - $zhezhao.width())){
+				left = $(_this).width() - $zhezhao.width();
 			}
 			if(top<0){
 				top = 0;
-			}else if(top >= ($(_this).height() - $('#zhezhao').height())){
-				top = $(_this).height() - $('#zhezhao').height();
+			}else if(top >= ($(_this).height() - $zhezhao.height())){
+				top = $(_this).height() - $zhezhao.height();
 			}
-			$('#zhezhao').css({
+			$zhezhao.css({
 				left:left,
 				top:top
 			});
 			//右面的大图变化
-			$('#outsideBigImg img').css({
-				left:-ratioX*$('#zhezhao').position().left,
-				top:-ratioY*$('#zhezhao').position().top,
+			$outsideBigImg.find('img').css({
+				left:-ratioX*$zhezhao.position().left,
+				top:-ratioY*$zhezhao.position().top,
 			});	
 		});
 		$(document).mouseout(function(){
 			$(document).off();
-			$('#zhezhao').hide();
-			$('#outsideBigImg').hide();
+			$zhezhao.hide();
+			$outsideBigImg.hide();
 		});
 	});
 
 	//鼠标放在小图上面进行大图切换
-	$('ul.smallImgs li img').hoverDelay({
+	var $smallImgsLi = $('ul.smallImgs li');
+	$smallImgsLi.find('img').hoverDelay({
 			hoverDuring: 100,
             outDuring: 100,
             hoverEvent: function(that){
             	var src = $(that).get(0).src;
-            	$('.smallImgs li').removeClass('addImgs');
+            	$smallImgsLi.removeClass('addImgs');
             	$(that).parent().addClass('addImgs');
             	$('.hoverImg').attr('src', src);
-            	$('#outsideBigImg img').attr('src',src);
+            	$outsideBigImg.find('img').attr('src',src);
             }
 	});
 	//小图默认样式
-	$('ul.smallImgs li:nth-of-type(1)').addClass('addImgs');
+	$smallImgsLi.find('li:nth-of-type(1)').addClass('addImgs');
 	//商品简介和累计评价切换
 	$('.tabBar li').on('click', function(){
 		var index = $(this).index();
+		var $tabBarContentDiv = $('.tabBarContent>div');
 		$('.tabBar li').removeClass('addTabBar');
 		$(this).addClass('addTabBar');
-		$('.tabBarContent>div').hide();
-		$('.tabBarContent>div').eq(index).show();
+		$tabBarContentDiv.hide();
+		$tabBarContentDiv.eq(index).show();
 	});
 	//图片延迟加载
 	var fn = function(){
@@ -516,26 +520,27 @@ require(['jquery', 'nav', 'common', 'jqueryExtend'], function($, nav) {
 	var stock = parseInt($('.stock').html());
 	//商品数量变换
 	//数量+
+	var $cartsNumberInput = $('.cartsNumber input');
 	$('.plus').on('click', function () {
-		var num = parseInt($('.cartsNumber input').val());
+		var num = parseInt($cartsNumberInput.val());
 		if(num >= stock){
 			return;
 		}else{
-			$('.cartsNumber input').attr('value', ++num);
+			$cartsNumberInput.attr('value', ++num);
 		}
 	});
 	//数量-
 	$('.decrease').on('click', function () {
-		var num = parseInt($('.cartsNumber input').val());
+		var num = parseInt($cartsNumberInput.val());
 		console.log(1);
 		if(num <= 0){
 			return;
 		}else{
-			$('.cartsNumber input').attr('value', --num);
+			$cartsNumberInput.attr('value', --num);
 		}
 	});
 	//直接修改数量input，失去焦点时进行检查数量时检查是否超过库存
-	$('.cartsNumber input').on('blur', function() {
+	$cartsNumberInput.on('blur', function() {
 		var num = $(this).val();
 		if(num >= stock){
 			$(this).attr('value', stock);

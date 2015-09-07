@@ -7,14 +7,16 @@ require(['jquery', 'nav', 'common'], function($, nav) {
 	//调用nav的返回值
 	nav();
 	//轮播图初始化
-	$('#slider a img').eq(0).css({
+	var $imgBtnLi = $('.imgBtn li');
+	var $sliderAImg = $('#slider a img');
+	$sliderAImg.eq(0).css({
 		opacity: 1
 	});
-	$('.imgBtn li').eq(0).addClass('switch');
+	$imgBtnLi.eq(0).addClass('switch');
 	var iPrev = 0;
 	var iNow = 0;
 	//手动轮播
-	$('.imgBtn li').on('click', function() {
+	$imgBtnLi.on('click', function() {
 		clearInterval(timer);
 		iNow = $(this).index();
 		slider(autoSlider);
@@ -25,14 +27,14 @@ require(['jquery', 'nav', 'common'], function($, nav) {
 	function slider(autoSlider) {
 		if (iNow != iPrev) {
 			
-			$('.imgBtn li').eq(iNow).addClass('switch');
-			$('.imgBtn li').eq(iPrev).removeClass('switch');
-			$('#slider a img').eq(iNow).stop().animate({
+			$imgBtnLi.eq(iNow).addClass('switch');
+			$imgBtnLi.eq(iPrev).removeClass('switch');
+			$sliderAImg.eq(iNow).stop().animate({
 				opacity: 1,
 			}, 1000, function() {
 				autoSlider ? (timer = autoSlider()) : '';
 			});
-			$('#slider a img').eq(iPrev).stop().animate({
+			$sliderAImg.eq(iPrev).stop().animate({
 				opacity: 0
 			}, 500);
 			iPrev = iNow;
@@ -49,14 +51,14 @@ require(['jquery', 'nav', 'common'], function($, nav) {
 		}, 5000);
 	}
 	//今日半价鼠标放上出现隐藏
-
-	$('.discountContentUl li').each(function(){
+	var $discountContentUlLi = $('.discountContentUl li');
+	$discountContentUlLi.each(function(){
 		var index = $(this).index();
 		$(this).css('top', index*118);
 	});
-	$('.discountContentUl li').hover(function(){
+	$discountContentUlLi.hover(function(){
 		var isNowIndex = $(this).index();
-		$('.discountContentUl li').each(function(){
+		$discountContentUlLi.each(function(){
 			var index = $(this).index();
 			if(index <= isNowIndex){
 				$(this).stop().animate({
@@ -69,7 +71,7 @@ require(['jquery', 'nav', 'common'], function($, nav) {
 			}
 		});
 	}, function(){
-		$('.discountContentUl li').each(function(){
+		$discountContentUlLi.each(function(){
 			var index = $(this).index();
 			$(this).stop().animate({
 				top : index*118

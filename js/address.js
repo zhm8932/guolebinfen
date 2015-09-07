@@ -8,12 +8,14 @@ require(['jquery', 'nav','jqueryExtend', 'city'], function($, nav) {
 	nav();
 	$('.stepCont ul li:nth-of-type(1)').css('display','block');
 	var flag = true;
+	var $stepContUlLi = $('.stepCont ul li');
+	var $addrSwitch = $('.addrSwitch');
 	//判断地址的条数是否大于或等于两个,如果是则显示更多地址按钮
 	function isAddressMore(){
-		if($('.stepCont ul li').length >= 2){
-			$('.addrSwitch').show();
+		if($stepContUlLi.length >= 2){
+			$addrSwitch.show();
 		}else{
-			$('.addrSwitch').hide();
+			$addrSwitch.hide();
 		}
 	}
 	//设置第一条地址为选中地址
@@ -23,9 +25,9 @@ require(['jquery', 'nav','jqueryExtend', 'city'], function($, nav) {
 	isFirstAddress();
 	isAddressMore();
 	//当地址为两个或两个以上时，显示隐藏标签
-	$('.addrSwitch div').on('click', function(){
+	$addrSwitch.find('div').on('click', function(){
 		if(!flag){
-			$('.stepCont ul li').each(function(index) {
+			$stepContUlLi.each(function(index) {
 				if(index != 0){
 					$(this).css('display', 'none');
 				}
@@ -34,7 +36,7 @@ require(['jquery', 'nav','jqueryExtend', 'city'], function($, nav) {
 			$(this).find('b').css('backgroundPosition', '0 0');
 			flag = true;
 		}else{
-			$('.stepCont ul li').each(function(index) {
+			$stepContUlLi.each(function(index) {
 				if(index != 0){
 					$(this).css('display', 'block');
 				}
@@ -59,35 +61,36 @@ require(['jquery', 'nav','jqueryExtend', 'city'], function($, nav) {
 	$.address('province', 'city', 'area','黑龙江', '哈尔滨','南岗区');
 	//点击提交按钮检测表单是否为空且手机号码是否正确
 	$('#formBtn').on('click', function(){
-		var name = $.trim($('#addAddr li:nth-of-type(1) input').val());
-		var address =  $.trim($('#addAddr li:nth-of-type(3) input').val());
-		var phone = $.trim($('#addAddr li:nth-of-type(4) input').val());
+		var $addAddr = $('#addAddr');
+		var name = $.trim($addAddr.find('li:nth-of-type(1) input').val());
+		var address =  $.trim($addAddr.find('li:nth-of-type(3) input').val());
+		var phone = $.trim($addAddr.find('li:nth-of-type(4) input').val());
 		var addressProvince = '';
 		var province = '';
 		var pattern =  /(^13\d{9}$)|(^14)[5,7]\d{8}$|(^15[0,1,2,3,5,6,7,8,9]\d{8}$)|(^17)[6,7,8]\d{8}$|(^18\d{9}$)/g;
 		if(!name){
-			$('#addAddr li:nth-of-type(1) p').css('display', 'inline-block').text('姓名不能为空');
+			$addAddr.find('li:nth-of-type(1) p').css('display', 'inline-block').text('姓名不能为空');
 			return false;
 		}else{
-			$('#addAddr li:nth-of-type(1) p').css('display', 'none').text('');
+			$addAddr.find('li:nth-of-type(1) p').css('display', 'none').text('');
 		}
 		if(!address){
-			$('#addAddr li:nth-of-type(3) p').css('display', 'inline-block').text('详细地址不能为空');
+			$addAddr.find('li:nth-of-type(3) p').css('display', 'inline-block').text('详细地址不能为空');
 		}else{
-			$('#addAddr li:nth-of-type(3) p').css('display', 'none').text('');
+			$addAddr.find('li:nth-of-type(3) p').css('display', 'none').text('');
 		}
 		if(!pattern.test(phone)){
-			$('#addAddr li:nth-of-type(4) p').css('display', 'inline-block').text('手机号码不能为空或号码不正确');
+			$addAddr.find('li:nth-of-type(4) p').css('display', 'inline-block').text('手机号码不能为空或号码不正确');
 			return false;
 		}else{
-			$('#addAddr li:nth-of-type(4) p').css('display', 'none').text('');
+			$addAddr.find('li:nth-of-type(4) p').css('display', 'none').text('');
 		}
-		province = $('#addAddr li:nth-of-type(2) select').val();
-		$('#addAddr li:nth-of-type(2) select').each(function(){
+		province = $addAddr.find('li:nth-of-type(2) select').val();
+		$addAddr.find('li:nth-of-type(2) select').each(function(){
 			addressProvince += $(this).val()+' ';
 		});
 		//点击保存后提交，出现loading动画
-		$('#addAddr').hide();
+		$addAddr.hide();
 		$.loading('./image/icon/loading_1.gif', '提交');
 		setTimeout(function(){
 			$.unMask();
@@ -122,13 +125,14 @@ require(['jquery', 'nav','jqueryExtend', 'city'], function($, nav) {
 		}
 	});
 	//鼠标放在支付选项上面出现问好图片
-	$('.paymentMethod ul li').hover(function(){
+	var $paymentMethodUlLi = $('.paymentMethod ul li');
+	$paymentMethodUlLi.hover(function(){
 		$(this).find('span').show();
 	}, function(){
 		$(this).find('span').hide();
 	});
 	//鼠标放在问号图片上面显示提示字体
-	$('.paymentMethod ul li span').hover(function(){
+	$paymentMethodUlLi.find('span').hover(function(){
 		showInfo($(this).attr('data-title'), $(this));
 	}, function(){
 		$('#tipTitle').remove();
@@ -138,8 +142,11 @@ require(['jquery', 'nav','jqueryExtend', 'city'], function($, nav) {
 		$('<div id="tipTitle"><div>' + attr + '</div><span></span></div>').appendTo(obj);
 	}
 	//点击支付方式选中
-	$('.paymentMethod ul li').on('click', function(){
+	$paymentMethodUlLi.on('click', function(){
 		$('.paymentMethod ul li').removeClass('otherLi');
 		$(this).addClass('otherLi');
 	});
 });
+
+
+
